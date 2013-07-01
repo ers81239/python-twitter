@@ -2342,7 +2342,7 @@ class Api(object):
         See shorten_url.py for an example shortner. [Optional]
       base_url:
         The base URL to use to contact the Twitter API.
-        Defaults to https://api.twitter.com. [Optional]
+        Defaults to https://api.twitter.com/1.1. [Optional]
       use_gzip_compression:
         Set to True to tell enable gzip compression for any call
         made to Twitter.  Defaults to False. [Optional]
@@ -3322,7 +3322,7 @@ class Api(object):
               break
         else:
           break
-      return result
+      return result, cursor
 
   def GetFollowers(self, user_id=None, screen_name=None, cursor=-1, skip_status=False, include_user_entities=False):
     '''Fetch the sequence of twitter.User instances, one for each follower
